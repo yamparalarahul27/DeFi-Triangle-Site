@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, LayoutDashboard, Radio } from "lucide-react";
 
-const CTA_HREF = "https://app.defitriangle.xyz/edge/token_edge";
+const CTA_HREF = "https://app.defitriangle.xyz";
 
 export default function LandingPage() {
   return (
