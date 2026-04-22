@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, LayoutDashboard, Radio } from "lucide-react";
 
-// TODO: replace href="#" on the primary CTA once the destination URL is provided.
-const CTA_HREF = "#";
+const CTA_HREF = "https://app.defitriangle.xyz/edge/token_edge";
 
 export default function LandingPage() {
   return (
@@ -43,13 +42,15 @@ export default function LandingPage() {
           <p className="font-ibm-plex-sans text-sm text-white/80 mb-4">
             Discover movers. Validate token safety.
           </p>
-          <Link
+          <a
             href={CTA_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 h-11 px-6 rounded-sm text-sm font-ibm-plex-sans font-medium bg-white text-[#11274d] hover:bg-white/90 active:scale-[0.97] transition-all duration-200"
           >
             <LayoutDashboard size={14} />
-            Open Market Pulse
-          </Link>
+            Token Edge
+          </a>
         </div>
 
         <p className="font-ibm-plex-sans text-xs text-white/50">
