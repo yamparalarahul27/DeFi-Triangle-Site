@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   title: "DeFi Triangle — Real-Time DeFi Intelligence",
   description:
     "Your DeFi execution and exposure app. Vaults, swaps, analytics, and privacy — powered by real on-chain data on Solana.",
+  icons: {
+    icon: "/brand/defi_logo_fill.svg",
+    shortcut: "/brand/defi_logo_fill.svg",
+    apple: "/brand/defi_logo_fill.svg",
+  },
   openGraph: {
     title: "DeFi Triangle",
     description: "Your DeFi execution and exposure app.",
