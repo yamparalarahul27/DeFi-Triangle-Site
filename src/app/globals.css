@@ -32,7 +32,7 @@
   --green-main: #18df74;
   --danger: #ef4444;
   --warning: #f59e0b;
-  --cta-color: #3B7DDD;
+  --cta-color: #3b7ddd;
 
   --card-gradient-from: #091731;
   --card-gradient-to: #19549b;
@@ -107,7 +107,9 @@ body {
   line-height: 1.2;
 }
 @media (min-width: 1024px) {
-  .data-lg { font-size: 1.875rem; }
+  .data-lg {
+    font-size: 1.875rem;
+  }
 }
 .data-md {
   font-family: "Geist Pixel Square", var(--font-ibm-plex-mono), monospace;
@@ -152,14 +154,32 @@ body {
   border-radius: 6px;
   border: 1px solid;
 }
-.state-info { background: #EFF6FF; border-color: #BFDBFE; color: #1D4ED8; }
-.state-warning { background: #FFFBEB; border-color: #FDE68A; color: #B45309; }
-.state-error { background: #FEF2F2; border-color: #FECACA; color: #B91C1C; }
+.state-info {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+.state-warning {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+.state-error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
 
 /* Fade-up animation */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-fade-up {
   animation: fade-up 400ms ease-out both;
@@ -170,23 +190,82 @@ body {
   width: 2rem;
   height: 2rem;
   border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.7);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--main-bg); }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--main-bg);
+}
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.2);
 }
-.scrollbar-hide { scrollbar-width: none; }
-.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Native view-transition route fades */
+::view-transition-old(.route-fade) {
+  animation:
+    180ms ease-in both route-fade-out,
+    220ms ease-in both route-shift-out;
+}
+::view-transition-new(.route-fade) {
+  animation:
+    280ms ease-out 80ms both route-fade-in,
+    320ms ease-out 80ms both route-shift-in;
+}
+@keyframes route-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes route-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes route-shift-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+@keyframes route-shift-in {
+  from {
+    transform: translateY(6px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(.route-fade),
+  ::view-transition-new(.route-fade) {
+    animation: none !important;
+  }
+}

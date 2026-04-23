@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import Link from "next/link";
 import { LOG, type DayEntry } from "./log-data";
 
 function formatDate(iso: string): string {
@@ -82,7 +83,14 @@ export default function LogPage() {
           paddingRight: "calc(50vw - 50%)",
         }}
       >
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1400px] mx-auto text-center flex flex-col items-center">
+          <Link
+            href="/"
+            transitionTypes={["fade"]}
+            className="self-start mb-4 inline-flex items-center gap-2 rounded-sm border border-white/30 bg-white/10 px-3 py-1.5 font-ibm-plex-sans text-xs text-white/90 hover:bg-white/15 transition-colors duration-200"
+          >
+            Back to Home
+          </Link>
           <h1 className="font-satoshi font-light text-2xl lg:text-4xl text-white tracking-tight mb-2">
             Project Log
           </h1>
