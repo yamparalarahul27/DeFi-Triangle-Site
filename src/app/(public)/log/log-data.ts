@@ -3,9 +3,34 @@ export interface DayEntry {
   added: string;
   fixed: string;
   learned: string;
+  break?: string;
 }
 
 export const LOG: DayEntry[] = [
+  {
+    date: "2026-04-23",
+    added:
+      "Tokens.xyz integration with a /solana asset showcase; a global Cmd+K search modal that replaces the inline SearchBox, plus a mobile bottom-sheet variant. Also improved the token-detail data merge and verification UX.",
+    fixed:
+      "Stage build was failing on a missing loader module and icon dependency — added both. HeaderProps drifted from how the dashboard actually passes watchlist props, and we realigned it.",
+    learned:
+      "Canvas charts (Liveline) can respond to cursor events while never painting — swapping to Recharts/SVG made the /solana chart reliable, and \"cursor works\" is not proof of render.",
+  },
+  {
+    date: "2026-04-22",
+    added:
+      "Token Edge MVP — Next.js scaffold, wallet auth, watchlist, and a risk-scored Solana dashboard. Restyled header and hero into a two-state sticky (transparent-over-hero to white-on-scroll) with a gradient bleed.",
+    fixed: "Nothing (day one of the real build).",
+    learned:
+      "Dropping a \"Work in Progress\" placeholder onto main lets us keep deploying the real build to stage without exposing it on the public URL.",
+  },
+  {
+    date: "2026-04-21",
+    added: "No commits on this day.",
+    fixed: "No commits on this day.",
+    learned: "No commits on this day.",
+    break: "Took a Break",
+  },
   {
     date: "2026-04-20",
     added:

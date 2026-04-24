@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Radio } from "lucide-react";
 
+const CTA_HREF = "https://app.defitriangle.xyz";
+
 export default function LandingPage() {
   return (
     <div className="flex-1 flex flex-col items-center px-6 py-12 gradient-frost-hero relative overflow-hidden">
@@ -44,12 +46,14 @@ export default function LandingPage() {
                   Discover tokens and gain an edge with planned safety and risk.
                 </p>
               </div>
-              <span
-                className="inline-flex items-center justify-center h-[32px] px-4 rounded-full text-xs font-ibm-plex-sans font-medium bg-white/15 border border-white/35 text-white/95 self-start sm:self-auto"
-                aria-label="Work in progress"
+              <a
+                href={CTA_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-[32px] px-4 rounded-full text-xs font-ibm-plex-sans font-medium bg-white/15 border border-white/35 text-white/95 self-start sm:self-auto hover:bg-white/25 transition-colors duration-200"
               >
-                WIP 🚧
-              </span>
+                Visit
+              </a>
             </div>
           </div>
 

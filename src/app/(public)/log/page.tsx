@@ -60,9 +60,17 @@ function DayCard({
           </span>
         </div>
         <div className="space-y-3">
-          <LogPoint tag="Added" text={day.added} />
-          <LogPoint tag="Fixed" text={day.fixed} />
-          <LogPoint tag="Learned" text={day.learned} />
+          {day.break ? (
+            <p className="text-xs text-[#11274d] font-ibm-plex-sans leading-relaxed">
+              {day.break}
+            </p>
+          ) : (
+            <>
+              <LogPoint tag="Added" text={day.added} />
+              <LogPoint tag="Fixed" text={day.fixed} />
+              <LogPoint tag="Learned" text={day.learned} />
+            </>
+          )}
         </div>
       </Card>
     </div>
