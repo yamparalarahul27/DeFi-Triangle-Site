@@ -6,6 +6,11 @@ import {
   Instrument_Sans,
   Inter,
 } from "next/font/google";
+import {
+  SITE_NAME,
+  SITE_ORIGIN,
+  SITE_SHORT_DESCRIPTION,
+} from "@/lib/site";
 import "./globals.css";
 
 const geistMono = Geist_Mono({
@@ -38,28 +43,44 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_ORIGIN),
   title: "DeFi Triangle — Real-Time DeFi Intelligence",
   description:
     "Your DeFi execution and exposure app. Vaults, swaps, analytics, and privacy — powered by real on-chain data on Solana.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/brand/defi_logo_fill.svg",
     shortcut: "/brand/defi_logo_fill.svg",
     apple: "/brand/defi_logo_fill.svg",
   },
   openGraph: {
-    title: "DeFi Triangle",
-    description: "Your DeFi execution and exposure app.",
-    siteName: "DeFi Triangle",
+    title: SITE_NAME,
+    description: SITE_SHORT_DESCRIPTION,
+    siteName: SITE_NAME,
     type: "website",
+    url: "/",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DeFi Triangle",
-    description: "Your DeFi execution and exposure app.",
+    title: SITE_NAME,
+    description: SITE_SHORT_DESCRIPTION,
+    images: [
+      {
+        url: "/twitter-image",
+        alt: SITE_NAME,
+      },
+    ],
   },
 };
 

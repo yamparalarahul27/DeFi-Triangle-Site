@@ -1,6 +1,16 @@
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { LOG, type DayEntry } from "./log-data";
+
+export const metadata: Metadata = {
+  title: "Project Log | DeFi Triangle",
+  description:
+    "Day-by-day evolution of DeFi Triangle: what shipped, what broke, and what we learned.",
+  alternates: {
+    canonical: "/log",
+  },
+};
 
 function formatDate(iso: string): string {
   const d = new Date(iso + "T00:00:00");
